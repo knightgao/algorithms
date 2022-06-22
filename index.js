@@ -33,22 +33,8 @@ function getWay(data,way,start,target){
                 way.push(item)
                 allWay.push(way)
             } else {
-                getWay(data,JSON.parse(JSON.stringify(way)),item,target)
+                getWay(data,[...way],item,target)
             }
         }
     )
-    // data[start].forEach((source)=>{
-    //     // 如果存在下一个节点
-    //     if(data[source] && data[source].length>0){
-    //         data[source].forEach(
-    //             (item)=>{
-    //                 if(item === target){
-    //
-    //                 }
-    //                 getWay(data,item,target)
-    //             }
-    //         )
-    //
-    //     }
-    // })
 }
