@@ -1,6 +1,8 @@
 let allWay = []
 
 export function getPath(data,start,end){
+    // 初始化值
+    allWay=[]
     let temp ={}
     // 预处理数据
     data.forEach(item=>{
@@ -11,9 +13,9 @@ export function getPath(data,start,end){
         }
     })
     // 检查数据合理性
-    if(!temp[start] || !temp[end]){
-        return []
-    }
+    // if(!temp[start]){
+    //     return []
+    // }
 
     getWay(temp,[],start,end)
 
@@ -23,7 +25,8 @@ export function getPath(data,start,end){
 
 
 function getWay(data,way,start,target){
-    if(!data[start]){
+    // 检查数据合理性
+    if(!data[start] && start!== target){
         return []
     }
     way.push(start)
